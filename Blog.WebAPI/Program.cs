@@ -1,3 +1,7 @@
+using Blog.WebAPI.Infrastructure;
+using Blog.Application.Blog;
+using Blog.Core.Blog;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +11,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//register services
+builder.Services
+    .AddSingleton<IBlogRepository, BlogRepository>()
+    .AddSingleton<IBlogService, BlogService>();
+
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandler>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.API", "Blog.API.csproj", "{B7569910-31FB-4640-86AC-03F488B5695B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.WebAPI", "Blog.WebAPI\Blog.WebAPI.csproj", "{B7569910-31FB-4640-86AC-03F488B5695B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core", "..\Blog.Core\Blog.Core.csproj", "{E76C93B5-BA4C-40B4-9B28-385EA5AFE64E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core", "..\Blog.API\Blog.Core\Blog.Core.csproj", "{E76C93B5-BA4C-40B4-9B28-385EA5AFE64E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Application", "..\Blog.Application\Blog.Application.csproj", "{39736E6D-81BE-41DF-889E-98DD15E489ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Application", "..\Blog.API\Blog.Application\Blog.Application.csproj", "{39736E6D-81BE-41DF-889E-98DD15E489ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
