@@ -4,6 +4,17 @@ using Blog.Core.Blog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add Cors services
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -17,6 +28,9 @@ builder.Services
     .AddSingleton<IBlogService, BlogService>();
 
 var app = builder.Build();
+
+// Use CORS middleware with the defined policy
+app.UseCors("AllowAll");
 
 app.UseMiddleware<ExceptionHandler>();
 
